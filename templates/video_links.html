@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="links-disp">
+    {% if request.cookies.get('user') %}
+        <h1>Select the teacher who suits you</h1>
+        {% for i in range(1,data|length) %}
+        <!-- {% set link=i %}  -->
+        <a href="/course_video/{{data[i-1]}}" >{{ data[i-1] }}</a><br>
+        {% endfor %}
+    {% else %}
+        <h3>Please Login first</h3>
+    {% endif %}
+</div>
+{% endblock %} 

@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+{% block content%}
+<header>
+    <nav id ="before-signup-login">
+        <div class="logo"><i class="fa-brands fa-google-scholar"></i>Learning With AI</div>
+        {% if request.cookies.get('user') %}
+        <nav id = "after-signup-login">
+            <div class="logo"><i class="fa-brands fa-google-scholar"></i>Learning With AI</div>
+            <div class="nav-bar">
+                <a href="#">Home</a>
+                <a href="#">Courses</a>
+                <a href="#">Contact us</a>
+                <a href="#">Help</a>
+                <div class="line2"></div>
+                <button class="logout"><i class="fa-solid fa-right-from-bracket"></i></button>
+            </div>
+        </nav>
+        {% else %}
+        <div class="sign_in_bar">
+            <button class="login-btn">Log in</button>
+            <div class="line1"></div>
+            <button class="signup-btn">Sign up</button>
+        </div>
+        {% endif %}
+    </nav>
+</header>
+<main>
+    <div class="login-form-container">
+        <div class="login-form">
+            <h2><i class="fa-brands fa-google-scholar"></i>Learning With AI</h2>
+            <h3>Welcome Back</h3>
+                <form action="{{url_for('user_login')}}" method="POST">
+                <label for="uname"><i class="fa-solid   fa-user"></i> Username</label><br>
+                <input type="text" name="username" id="uname" placeholder="Enter your username"><br>
+                <label for="pass"><i class="fa-solid fa-lock"></i> Password</label><br>
+                <input type="password" name="passwd" id="pass" placeholder="Enter your password"><br>
+            </form>
+            <button class="loginbtn-loginform"> Log in</button>
+            <a href="">Don't have an account?</a>
+        </div>
+    </div>
+    <div class="signup-form-container">
+        <div class="signup-form">
+            <h2><i class="fa-brands fa-google-scholar"></i>Learning With AI</h2>
+            <h3>Create your account</h3>
+            <form action="{{url_for('')}}">
+                <label for="fname">Enter your Fullname:</label><br>
+                <input type="text" id="fname"placeholder=" Your Fullname"><br>
+                <label for="email">Enter your Email:</label><br>
+                <input type="text" id="email" placeholder="Your Email"><br>
+                <label for="no">Enter your phone number:</label><br>
+                <input type="number" id="no" placeholder="Enter Number"><br>
+            </form>
+            <button class="next">Next</button>
+        </div>
+        <div class="signup-form-nxt">
+            <h2><i class="fa-brands fa-google-scholar"></i>Learning With AI</h2>
+            <form action="">
+                <label for="uname2">Create your Username</label><br>
+                <input type="text" id="uname2" placeholder="Username"><br>
+                <label for="Pass">Create your Password</label><br>
+                <input type="password" id="Pass" placeholder="Password"><br>
+                <label for="rePass">Reenter Password</label><br>
+                <input type="password" id="rePass" placeholder="Reenter Password"><br>
+                <input type="submit" class="submitbtn" id="Pass"><br>
+            </form>
+        </div>
+    </div>
+    <div class="overlay"></div>
+    <div class="container-1">
+        <div class="home-pg-text">
+        <h1 >There's always a better way to learn new things</h1>
+        <h3>Learn with AI in new way</h3>
+        </div>
+        <div class="some"></div>
+    </div>
+    <div class="container-2"></div>
+</main>
+{% endblock %}

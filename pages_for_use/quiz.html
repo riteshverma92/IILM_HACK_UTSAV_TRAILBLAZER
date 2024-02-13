@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header>  
+        <nav id = "after-signup-login">
+            <div class="logo"><i class="fa-brands fa-google-scholar"></i>Learning With AI</div>
+            <div class="nav-bar">
+                <a href="#">Home</a>
+                <a href="#">Courses</a>
+                <a href="#">Contact us</a>
+                <a href="#">Help</a>
+                <div class="line2"></div>
+                <button class ="profile"><i class="fa-solid fa-user"></i></button>
+                <!-- <button class="logout"><i class="fa-solid fa-right-from-bracket"></i></button> -->
+            </div>
+        </nav>
+    </header>
+    <main class="quiz-page">
+        <div class="quiz-container">
+            <h1>Quiz</h1>
+            <div id="quiz"></div>
+            <div id="result" class="result"></div>
+            <button id="submit" class="button">Submit</button>
+            <button id="retry" class="button hide">Retry</button>
+            <button id="showAnswer" class="button hide">Show Answer</button>
+        </div>
+    </main>
+    <script src="quiz-logic.js"></script>
+</body>
+</html>

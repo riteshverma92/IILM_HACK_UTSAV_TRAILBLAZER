@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block content %}
+{% if request.cookies.get('user') %}
+<h2>Quiz Form</h2>
+    <form action="/submit" method="post">
+        {% for question in quiz_data %}
+            <div>
+                <p>{{ question[2] }}</p>
+                <label>
+                    <input type="radio" name="question_{{ question[0] }}" value="{{ question[2] }}">{{ question[3] }}
+                </label><br>
+                <label>
+                    <input type="radio" name="question_{{ question[0] }}" value="{{ question[3] }}">{{ question[4] }}
+                </label><br>
+                <label>
+                    <input type="radio" name="question_{{ question[0] }}" value="{{ question[4] }}">{{ question[5] }}
+                </label><br>
+                <label>
+                    <input type="radio" name="question_{{ question[0] }}" value="{{ question[5] }}">{{ question[6] }}
+                </label><br>
+            </div>
+        {% endfor %}
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+    {% else %}
+    <h3>Please login first!</h3>
+    {% endif %}
+{% endblock %}

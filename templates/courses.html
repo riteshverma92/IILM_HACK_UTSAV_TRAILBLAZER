@@ -1,0 +1,130 @@
+{% extends "layout.html" %} {% block content %}
+<!-- <div class="courses-display"> -->
+{% if request.cookies.get('user') %}
+<div class="course-main">
+  <div class="overlay"></div>
+
+  <div class="popup_a">
+    <h3>Front-End Web Development</h3>
+    <span class="crossbtn" id="cross-a">&times</span>
+    <div class="content">
+      <div class="left-side-text">
+        Front-end web development is the development of the graphical user
+        interface of a website, through the use of HTML, CSS, and JavaScript, so
+        that users can view and interact with that website.
+        <div class="dropdown">
+            <a href="/selected_courses/{{'html'}}"><button class="dropbtn" > HTML</button></a>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="#">knowledge</a>
+                <a href="#">not knowledge</a>
+                 
+            </div>
+        </div>
+        <div class="dropdown">
+          <a href="/selected_courses/{{'css'}}"> <button class="dropbtn" > CSS</button></a>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="#">knowledge</a>
+                <a href="#">not knowledge</a>
+                 
+            </div>
+        </div>
+        <div class="dropdown">
+          <a href="/selected_courses/{{'javaScript'}}"> <button class="dropbtn" > Java Script</button></a>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="#">knowledge</a>
+                <a href="#">not knowledge</a>
+                 
+            </div>
+        </div>
+        <!-- <div class="another-text">
+          Before starting the course you have to give a simple test.
+          <button class="st-qu">Start Quiz</button>
+        </div> -->
+      </div>
+      <div class="right-side-img">
+        <img src="../static/WhatsApp Image 2024-02-12 at 3.51.26 PM.jpeg" alt="image">
+      </div>
+    </div>
+  </div>
+
+  <div class="popup_b">
+    <h3>Back-End Web Development</h3>
+    <span class="crossbtn" id="cross-b">&times</span>
+    <div class="content">
+      <div class="left-side-text">
+        Back-end development means working on server-side software, which
+        focuses on everything you can't see on a website. Back-end developers
+        ensure the website performs correctly, focusing on databases, back-end
+        logic, application programming interface (APIs), architecture, and
+        servers.
+        <div class="another-text">
+          Before starting the course you have to give a simple test.
+          <button class="st-qu">Start Quiz</button>
+        </div>
+      </div>
+      <div class="right-side-img">
+        <img src="../static/WhatsApp Image 2024-02-12 at 6.24.52 PM.jpeg" alt="image">
+      </div>
+    </div>
+  </div>
+
+  <div class="popup_c">
+    <h3>FUll Stack Web Development</h3>
+    <span class="crossbtn" id="cross-c">&times</span>
+    <div class="content">
+      <div class="left-side-text">
+        Front-end web development is the development of the graphical user
+        interface of a website, through the use of HTML, CSS, and JavaScript, so
+        that users can view and interact with that website.
+        <div class="another-text">
+          Before starting the course you have to give a simple test.
+          <button class="st-qu">Start Quiz</button>
+        </div>
+      </div>
+      <div class="right-side-img">
+        <img src="../static/full-stack-development.png" alt="image">
+      </div>
+    </div>
+  </div>
+
+  <div class="popup_d">
+    <h3>FUll Stack Web Development</h3>
+    <span class="crossbtn" id="cross-d">&times</span>
+    <div class="content">
+      <div class="left-side-text">
+        Front-end web development is the development of the graphical user
+        interface of a website, through the use of HTML, CSS, and JavaScript, so
+        that users can view and interact with that website.
+        <div class="another-text">
+          Before starting the course you have to give a simple test.
+          <a href="quiz.html"><button>Start Quiz</button></a>
+        </div>
+      </div>
+      <div class="right-side-img">
+        <img src="../static/android.png" alt="image">
+      </div>
+    </div>
+  </div>
+
+  <div class="course-container">
+    <div class="courses-display">
+      <h1>Courses</h1>
+      <div class="courseslist">
+        <!-- <h3>Course-List</h3> -->
+        <button id="a">Front-End Web Development</button>
+        <button id="b">Back-End Web Development</button>
+        <button id="c">Full-Stack Web Development</button>
+        <button id="d">Android Development</button>
+        <!-- <a href=""></a>
+                <a href="">Back-End Web Development</a>
+                <a href="">Full-Stack Web Development</a>
+                <a href="">Android Development</a> -->
+      </div>
+    </div>
+  </div>
+  {% else %}
+  <h3>Please Login first</h3>
+  {% endif %}
+  </div>
+  {% endblock %}
+

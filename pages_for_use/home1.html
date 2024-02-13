@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning With Ai</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <nav id="before-signup-login">
+            <div class="logo"><i class="fa-brands fa-google-scholar"></i>Learning With AI</div>
+
+            <!-- <nav id = "after-signup-login"> -->
+            <!-- <div class="logo"><i class="fa-brands fa-google-scholar"></i>Learning With AI</div> -->
+
+            <div class="nav-bar">
+                <a href="#">Home</a>
+                <a href="#">Courses</a>
+                <a href="#">Contact us</a>
+                <a href="#">Help</a>
+                <div class="line2"></div>
+                
+            </div>
+
+            <!-- <a href="{{url_for('logout')}}"><button class="logout"><i class="fa-solid fa-right-from-bracket"></i></button></a>
+                </div> -->
+            <!-- algo trading -->
+            <!-- </nav> -->
+
+            <!-- <div class="sign_in_bar">
+                <button class="login-btn">Log in</button>
+                <div class="line1"></div>
+                <button class="signup-btn">Sign up</button>
+            </div> -->
+
+        </nav>
+    </header>
+    <main>
+        <div class="login-form-container">
+            <div class="login-form">
+                <h2><i class="fa-brands fa-google-scholar"></i>Learning With AI</h2>
+                <h3>Welcome Back</h3>
+                <form action="{{url_for('user_login')}}" method="POST">
+                    <label for="uname"><i class="fa-solid   fa-user"></i> Username</label><br>
+                    <input type="text" name="username" id="uname" placeholder="Enter your username"><br>
+                    <label for="pass"><i class="fa-solid fa-lock"></i> Password</label><br>
+                    <input type="password" name="passwd" id="pass" placeholder="Enter your password"><br>
+                    <button class="loginbtn-loginform"> Log in</button>
+                </form>
+                <a href="">Don't have an account?</a>
+            </div>
+        </div>
+        <div class="signup-form-container">
+            <div class="signup-form">
+                <h2><i class="fa-brands fa-google-scholar"></i>Learning With AI</h2>
+                <h3>Create your account</h3>
+                <form action="">
+                    <div class="first-page-signup-page">
+                        <label for="fname">Enter your Fullname:</label><br>
+                        <input type="text" name="fname" id="fname" placeholder=" Your Fullname"><br>
+                        <label for="email">Enter your Email:</label><br>
+                        <input type="text" name="email" id="email" placeholder="Your Email"><br>
+                        <label for="no">Enter your phone number:</label><br>
+                        <input type="number" name="phone" id="no" placeholder="Enter Number"><br>
+                        <!-- <button class="next">Next</button> -->
+                        <!-- </div>
+                    <div class="sec-page-signup-form"> -->
+                        <label for="uname2">Create your Username:</label><br>
+                        <input type="text" name="username" id="uname2" placeholder="Username"><br>
+                        <label for="Pass">Create your Password:</label><br>
+                        <input type="password" name="password" id="Pass" placeholder="Password"><br>
+                        <label for="rePass">Re-enter Password:</label><br>
+                        <input type="password" name="cnfmpassword" id="rePass" placeholder="Re-enter Password"><br>
+                    </div>
+                    <button class="sendotp">Send OTP</button>
+                </form>
+            </div>
+            <div class="otp-popup">
+                <p>Please Enter OTP for Verification</p>
+                <form action="">
+                    <input type="number" placeholder="Enter OTP">
+                </form>
+                <button class="vrfy-btn">Verify Me</button>
+                <p id="resend-msg"> Didn't get OTP? <a href="">Resend OTP</a></p>
+            </div>
+        </div>
+
+        <div class="overlay"></div>
+        
+        <div class="container-1">
+            <div class="home-pg-text">
+                <h1>There's always a better way to learn new things</h1>
+                <h3>Learn with AI in new way</h3>
+            </div>
+            <div class="some"></div>
+        </div>
+        <div class="container-2"></div>
+    </main>
+    <script src="logic.js"></script>
+</body>
+
+</html>

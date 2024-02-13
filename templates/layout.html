@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../static/style.css">
+    {% if title %}
+        <title>Learning with AI-{{title}}</title>
+    {% else %}
+        <title>Learning with AI</title>
+    {% endif %}
+</head>
+<body>
+    <header>
+        <nav id ="before-signup-login">
+            <div class="logo"><i class="fa-brands fa-google-scholar"></i>Learning With AI</div>
+            {% if request.cookies.get('user') %}
+                <div class="nav-bar">
+                    <a href="{{url_for('home')}}">Home</a>
+                    <a href="{{url_for('courses_offered')}}">Courses</a>
+                    <!-- <a href="#">Contact us</a> -->
+                    <a href="{{url_for('help_center')}}">Help</a>
+                    <div class="line2"></div>
+                    <div class="profile-btn">
+                        <button class="profile"><i class="fa-solid fa-user"></i>
+                        <div class="profile-dropdown">
+                            <a href="{{url_for('myprofile')}}">Account</a>
+                            <a href="{{url_for('mycourses')}}">My Courses</a>
+                            <a href="{{url_for('logout')}}">Log out</a>
+                        </div>
+                        </button>
+                    </div>
+                    <!-- <a href="{{url_for('logout')}}"><button class="logout"><i class="fa-solid fa-right-from-bracket"></i></button></a> -->
+                </div>
+            {% else %}
+            <div class="sign_in_bar">
+                <button class="login-btn">Log in</button>
+                <div class="line1"></div>
+                <button class="signup-btn">Sign up</button>
+            </div>
+            {% endif %}
+        </nav>
+    </header>
+    <main>
+        <div class="login-form-container">
+            <div class="login-form">
+                <h2><i class="fa-brands fa-google-scholar"></i>Learning With AI</h2>
+                <h3>Welcome Back</h3>
+                    <form action="{{url_for('user_login')}}" method="POST">
+                    <label for="uname"><i class="fa-solid   fa-user"></i> Username</label><br>
+                    <input type="text" name="username" id="uname" placeholder="Enter your username"><br>
+                    <label for="pass"><i class="fa-solid fa-lock"></i> Password</label><br>
+                    <input type="password" name="passwd" id="pass" placeholder="Enter your password"><br>
+                    <button type="submit" class="loginbtn-loginform"> Log in</button>
+                </form>
+                <a href="#">Don't have an account?</a>
+            </div>
+        </div>
+        <div class="signup-form-container">
+            <div class="signup-form">
+                <h2><i class="fa-brands fa-google-scholar"></i>Learning With AI</h2>
+                <h3>Create your account</h3>
+                <form action = "{{url_for('user_signup')}}" method="POST">
+                    <div class="first-page-signup-page">
+                        <label for="fname">Enter your Fullname:</label><br>
+                        <input type="text" name="fname" id="fname"placeholder=" Your Fullname"><br>
+                        <label for="email">Enter your Email:</label><br>
+                        <input type="text" name="email" id="email" placeholder="Your Email"><br>
+                        <label for="no">Enter your phone number<br>(with country code):</label><br>
+                        <input type="text" name="phone" id="no" placeholder="Enter Number"><br>
+                        <!-- <button class="next">Next</button> -->
+                    <!-- </div>
+                    <div class="sec-page-signup-form"> -->
+                        <label for="uname2">Create your Username:</label><br>
+                        <input type="text" name="username" id="uname2" placeholder="Username"><br>
+                        <label for="Pass">Create your Password:</label><br>
+                        <input type="password" name="password" id="Pass" placeholder="Password"><br>
+                        <label for="rePass">Re-enter Password:</label><br>
+                        <input type="password" name="cnfmpassword" id="rePass" placeholder="Re-enter Password"><br>
+                    </div>
+                    <button type="submit" class="sendotp">Send OTP</button>
+                </form>
+            </div>
+        </div>
+        <div class="overlay"></div>    
+        <!-- add here login,logout,signup,error pop-ups -->
+        <!-- <div class="content">    -->
+            <!-- koi bhi style to body pe dena hai har page k wo iss class pe dega -->
+            {% block content %}
+            {% endblock %}
+        <!-- </div> -->
+    </main>
+    <footer>
+        <div class="title">
+            <h1>Contact Us</h1>
+        </div>
+        <div class="container1">
+            <a href="#"><p>Email</p></a>
+            <a href="#"><p>Phone</p></a>
+            <a href="#"><p>Instagram</p></a>
+            <a href="#"><p>LinkedIn</p></a>
+            <a href="#"><p>Twitter</p></a>
+        </div>
+    </footer>
+    <script src="../static/logic.js" ></script>
+</body>
+</html>
